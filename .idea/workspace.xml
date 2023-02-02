@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="57761c75-4930-4eb4-b710-8c3c1ac6e2d3" name="Changes" comment="Initial Commit without JTA">
+      <change beforePath="$PROJECT_DIR$/src/test/resources/activemq.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/activemq.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2LAq5keAPWoSRLV1KegeylCAIXq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/alina/IdeaProjects/spring-jta/src/test/resources"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bsmx.spring.jta.service" />
+      <recent name="com.bsmx.spring.jta.repository" />
+      <recent name="com.bsmx.spring.jta.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ApplicationTests">
+    <configuration name="ApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jta" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bsmx.spring.jta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bsmx.spring.jta" />
+      <option name="MAIN_CLASS_NAME" value="com.bsmx.spring.jta.ApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.saveMessagesInJmsAndDBWithApplicationErrorsAtEndOfTheFlow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jta" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bsmx.spring.jta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bsmx.spring.jta" />
+      <option name="MAIN_CLASS_NAME" value="com.bsmx.spring.jta.ApplicationTests" />
+      <option name="METHOD_NAME" value="saveMessagesInJmsAndDBWithApplicationErrorsAtEndOfTheFlow" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.saveMessagesInJmsAndDBWithJmsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jta" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bsmx.spring.jta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bsmx.spring.jta" />
+      <option name="MAIN_CLASS_NAME" value="com.bsmx.spring.jta.ApplicationTests" />
+      <option name="METHOD_NAME" value="saveMessagesInJmsAndDBWithJmsException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.saveMessagesInJmsAndDBWithSqlException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jta" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bsmx.spring.jta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bsmx.spring.jta" />
+      <option name="MAIN_CLASS_NAME" value="com.bsmx.spring.jta.ApplicationTests" />
+      <option name="METHOD_NAME" value="saveMessagesInJmsAndDBWithSqlException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.saveMessagesInJmsAndDBWithoutErrors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jta" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bsmx.spring.jta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bsmx.spring.jta" />
+      <option name="MAIN_CLASS_NAME" value="com.bsmx.spring.jta.ApplicationTests" />
+      <option name="METHOD_NAME" value="saveMessagesInJmsAndDBWithoutErrors" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ApplicationTests" />
+        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithJmsException" />
+        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithoutErrors" />
+        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithSqlException" />
+        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithApplicationErrorsAtEndOfTheFlow" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57761c75-4930-4eb4-b710-8c3c1ac6e2d3" name="Changes" comment="" />
+      <created>1675324058215</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675324058215</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit without JTA">
+      <created>1675338003246</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675338003246</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate:hibernate-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial Commit without JTA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit without JTA" />
+  </component>
+</project>
