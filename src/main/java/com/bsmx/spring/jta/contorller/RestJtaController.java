@@ -3,12 +3,12 @@ package com.bsmx.spring.jta.contorller;
 import com.bsmx.spring.jta.service.JmsService;
 import com.bsmx.spring.jta.service.JtaService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.transaction.Transactional;
 import java.util.Map;
 
 @RestController
@@ -19,7 +19,7 @@ public class RestJtaController {
     private final JtaService jtaService;
 
     @PostMapping(path = "/sendJmsMessage")
-    @Transactional
+    @Transactional(transactionManager = "jtaTransactionManager")
     public String sendJmsMessage(@RequestBody Map<String, Object> map) {
         Object messageFromMap = map.get("message");
         if (messageFromMap != null) {

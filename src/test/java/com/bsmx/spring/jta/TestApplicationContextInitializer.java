@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.testcontainers.containers.BindMode;
 import org.testcontainers.containers.GenericContainer;
+import org.testcontainers.containers.PostgreSQLContainer;
 
 @Slf4j
 public class TestApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
@@ -27,5 +28,20 @@ public class TestApplicationContextInitializer implements ApplicationContextInit
         log.info("ActiveMQ URL: '{}'", url);
         var property = String.format(BROKER_URL_FORMAT, url);
         TestPropertyValues.of(property).applyTo(applicationContext.getEnvironment());
+
+
+
+        PostgreSQLContainer postgreSQLContainer = new PostgreSQLContainer("postgres:13");
+        postgreSQLContainer.withCommand("postgres", "-c", "max_prepared_transactions=100");
+
+        postgreSQLContainer.start();
+        var jdbcUrl = postgreSQLContainer.getJdbcUrl();
+        log.info("Postgres URL: '{}'", jdbcUrl);
+
+        TestPropertyValues.of(
+                String.format("spring.datasource.url=%s", jdbcUrl),
+                String.format("spring.datasource.username=%s", postgreSQLContainer.getUsername()),
+                String.format("spring.datasource.password=%s", postgreSQLContainer.getPassword())
+        ).applyTo(applicationContext.getEnvironment());
     }
 }

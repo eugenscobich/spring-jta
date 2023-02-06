@@ -1,13 +1,14 @@
 package com.bsmx.spring.jta.service;
 
 import com.bsmx.spring.jta.model.JtaEntity;
-import com.bsmx.spring.jta.repository.JtaRepository;
+import com.bsmx.spring.jta.xa.repository.JtaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.apachecommons.CommonsLog;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -19,12 +20,12 @@ public class JtaService {
 
     private final JtaRepository jtaRepository;
 
-
     public void saveMessage(String message) {
         log.info("Save message in DB: " + message);
         JtaEntity jtaEntity = new JtaEntity();
-        jtaEntity.setMessage(message);
         jtaRepository.save(jtaEntity);
+        Optional<JtaEntity> jtaEntityOptional = jtaRepository.findById(jtaEntity.getId());
+        jtaEntityOptional.ifPresent(e -> e.setMessage(message));
     }
 
     public String getMessages() {

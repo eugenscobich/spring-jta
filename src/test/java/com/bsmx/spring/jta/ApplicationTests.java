@@ -58,7 +58,7 @@ class ApplicationTests {
 		assertTrue(response.getBody().contains(uuid.toString()));
 
 		boolean found = false;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i < 10; i++) {
 			String messagesInJms = receivedJtaMessagesService.getMessages();
 			String messagesInDB = jtaService.getMessages();
 			found = messagesInJms.contains(uuid.toString()) && messagesInDB.contains(uuid.toString());
@@ -89,7 +89,7 @@ class ApplicationTests {
 
 		boolean foundMessagesInJms = false;
 		boolean foundMessagesInDB = false;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i < 10; i++) {
 			String messagesInJms = receivedJtaMessagesService.getMessages();
 			String messagesInDB = jtaService.getMessages();
 			foundMessagesInJms = messagesInJms.contains(uuid.toString());
@@ -123,7 +123,7 @@ class ApplicationTests {
 
 		boolean foundMessagesInJms = false;
 		boolean foundMessagesInDB = false;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i < 10; i++) {
 			String messagesInJms = receivedJtaMessagesService.getMessages();
 			String messagesInDB = jtaService.getMessages();
 			foundMessagesInJms = messagesInJms.contains(uuidStr);
@@ -161,7 +161,7 @@ class ApplicationTests {
 
 		boolean foundMessagesInJms = false;
 		boolean foundMessagesInDB = false;
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 10; i++) {
 			String messagesInJms = receivedJtaMessagesService.getMessages();
 			String messagesInDB = jtaService.getMessages();
 			foundMessagesInJms = messagesInJms.contains(uuidStr);

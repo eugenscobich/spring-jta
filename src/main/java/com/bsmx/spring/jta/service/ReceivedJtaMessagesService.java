@@ -1,12 +1,11 @@
 package com.bsmx.spring.jta.service;
 
-import com.bsmx.spring.jta.model.JtaEntity;
 import com.bsmx.spring.jta.model.ReceivedJtaMessageEntity;
-import com.bsmx.spring.jta.repository.JtaRepository;
 import com.bsmx.spring.jta.repository.ReceivedJtaMessageRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +18,7 @@ public class ReceivedJtaMessagesService {
 
     private final ReceivedJtaMessageRepository receivedJtaMessageRepository;
 
-
+    @Transactional(transactionManager = "localTransactionManager")
     public void saveMessage(String message) {
         log.info("Save ReceivedJtaMessageEntity in DB: " + message);
         ReceivedJtaMessageEntity receivedJtaMessageEntity = new ReceivedJtaMessageEntity();

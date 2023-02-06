@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57761c75-4930-4eb4-b710-8c3c1ac6e2d3" name="Changes" comment="Initial Commit without JTA">
-      <change beforePath="$PROJECT_DIR$/src/test/resources/activemq.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/activemq.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/AtomikosTransactionManagerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/JpaRepositoriesConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/LocalTransactionManagerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/XaJpaRepositoriesConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transaction-logs/tmlog45.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/contorller/RestJtaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/contorller/RestJtaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/repository/JtaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/xa/repository/JtaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/JmsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/JmsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/JtaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/JtaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/ReceivedJtaMessagesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/ReceivedJtaMessagesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/bsmx/spring/jta/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bsmx/spring/jta/ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/bsmx/spring/jta/TestApplicationContextInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bsmx/spring/jta/TestApplicationContextInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application-test.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +35,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Evghenii Scobici &lt;eugen.scobich@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -40,27 +60,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/alina/IdeaProjects/spring-jta/src/test/resources"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alina/IdeaProjects/spring-jta/src/test/resources&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bsmx.spring.jta.config" />
       <recent name="com.bsmx.spring.jta.service" />
       <recent name="com.bsmx.spring.jta.repository" />
       <recent name="com.bsmx.spring.jta.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApplicationTests">
+  <component name="RunManager" selected="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithoutErrors">
     <configuration name="ApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-jta" />
       <extension name="coverage">
@@ -142,9 +163,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithoutErrors" />
         <item itemvalue="JUnit.ApplicationTests" />
         <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithJmsException" />
-        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithoutErrors" />
         <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithSqlException" />
         <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithApplicationErrorsAtEndOfTheFlow" />
       </list>
@@ -166,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675338003246</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial Commit without JTA">
+      <created>1675338468467</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675338468467</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -182,5 +210,31 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit without JTA" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial Commit without JTA" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.7.8/spring-boot-2.7.8-sources.jar!/org/springframework/boot/context/properties/bind/Binder.java</url>
+          <line>346</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.3.25/spring-tx-5.3.25-sources.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.java</url>
+          <line>495</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.3.25/spring-tx-5.3.25-sources.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.java</url>
+          <line>491</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.7.8/spring-boot-2.7.8-sources.jar!/org/springframework/boot/jta/atomikos/AtomikosXADataSourceWrapper.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

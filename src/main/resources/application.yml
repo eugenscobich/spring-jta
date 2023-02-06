@@ -1,14 +1,21 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:mydb
-    username: sa
-    password: password
-    driverClassName: org.h2.Driver
+    name: xa-datasource
+    url: # resolved by test containers
+    username: # resolved by test containers
+    password: # resolved by test containers
+
   jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    spring.jpa.database-platform: org.hibernate.dialect.PostgreSQL10Dialect
     show-sql: false
     hibernate:
       ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQL10Dialect
+
+
+
+logging.level.org.springframework.transaction: DEBUG
+logging.level.com.atomikos: DEBUG
 
 
 server:
