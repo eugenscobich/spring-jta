@@ -13,7 +13,7 @@ public class JmsJtaListener {
 
     private final ReceivedJtaMessagesService receivedJtaMessagesService;
 
-    @JmsListener(destination = "${service.jta.jms.destination}")
+    @JmsListener(destination = "${service.jta.jms.destination}", containerFactory = "jmsListenerContainerFactory")
     public void receiveMessage(String message) {
         log.info("Received Jms message: " + message);
         receivedJtaMessagesService.saveMessage(message);

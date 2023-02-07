@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "entityManagerFactory",
+        entityManagerFactoryRef = "entityManager",
         transactionManagerRef = "jtaTransactionManager",
         basePackages = {"com.bsmx.spring.jta.xa.repository"})
 public class XaJpaRepositoriesConfig {

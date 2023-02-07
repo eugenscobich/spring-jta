@@ -11,7 +11,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 @Slf4j
 public class TestApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
-    private static final String ACTIVEMQ_IMAGE = "rmohr/activemq";
+    private static final String ACTIVEMQ_IMAGE = "rmohr/activemq:5.15.9-alpine";
     private static final int ACTIVEMQ_PORT = 61616;
     private static final String TCP_FORMAT = "tcp://%s:%d";
     private static final String BROKER_URL_FORMAT = "spring.activemq.broker-url=%s";
@@ -31,7 +31,7 @@ public class TestApplicationContextInitializer implements ApplicationContextInit
 
 
 
-        PostgreSQLContainer postgreSQLContainer = new PostgreSQLContainer("postgres:13");
+        PostgreSQLContainer postgreSQLContainer = new PostgreSQLContainer("postgres:13.0");
         postgreSQLContainer.withCommand("postgres", "-c", "max_prepared_transactions=100");
 
         postgreSQLContainer.start();

@@ -1,11 +1,11 @@
 package com.bsmx.spring.jta.service;
 
 import com.bsmx.spring.jta.model.JtaEntity;
-import com.bsmx.spring.jta.xa.repository.JtaRepository;
+import com.bsmx.spring.jta.repository.JtaRepository;
+import com.bsmx.spring.jta.xa.repository.XaJtaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,9 +18,18 @@ import java.util.stream.Stream;
 public class JtaService {
 
 
+    private final XaJtaRepository xaJtaRepository;
     private final JtaRepository jtaRepository;
 
     public void saveMessage(String message) {
+        log.info("Save message in DB: " + message);
+        JtaEntity jtaEntity = new JtaEntity();
+        xaJtaRepository.save(jtaEntity);
+        Optional<JtaEntity> jtaEntityOptional = xaJtaRepository.findById(jtaEntity.getId());
+        jtaEntityOptional.ifPresent(e -> e.setMessage(message));
+    }
+
+    public void simpleSaveMessage(String message) {
         log.info("Save message in DB: " + message);
         JtaEntity jtaEntity = new JtaEntity();
         jtaRepository.save(jtaEntity);
@@ -39,6 +48,6 @@ public class JtaService {
         log.info("Save large message in DB: " + largeMessage);
         JtaEntity jtaEntity = new JtaEntity();
         jtaEntity.setLargeMessage(largeMessage);
-        jtaRepository.save(jtaEntity);
+        xaJtaRepository.save(jtaEntity);
     }
 }

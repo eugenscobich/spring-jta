@@ -5,22 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57761c75-4930-4eb4-b710-8c3c1ac6e2d3" name="Changes" comment="Initial Commit without JTA">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/AtomikosTransactionManagerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/JpaRepositoriesConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/LocalTransactionManagerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/XaJpaRepositoriesConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction-logs/tmlog45.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/JMSConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/xa/repository/XaJtaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transaction-logs/tmlog49.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/AtomikosTransactionManagerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/AtomikosTransactionManagerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/XaJpaRepositoriesConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/config/XaJpaRepositoriesConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/contorller/RestJtaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/contorller/RestJtaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/repository/JtaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/xa/repository/JtaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/jms/JmsJtaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/jms/JmsJtaListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/JmsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/JmsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/JtaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/JtaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/ReceivedJtaMessagesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/ReceivedJtaMessagesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/xa/repository/JtaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/repository/JtaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bsmx/spring/jta/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bsmx/spring/jta/ApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bsmx/spring/jta/TestApplicationContextInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bsmx/spring/jta/TestApplicationContextInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction-logs/tmlog45.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,28 +59,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/alina/IdeaProjects/spring-jta/src/test/resources&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/alina/IdeaProjects/spring-jta/src/test/resources",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bsmx.spring.jta.repository" />
       <recent name="com.bsmx.spring.jta.config" />
       <recent name="com.bsmx.spring.jta.service" />
-      <recent name="com.bsmx.spring.jta.repository" />
       <recent name="com.bsmx.spring.jta.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithoutErrors">
+  <component name="RunManager" selected="JUnit.ApplicationTests">
     <configuration name="ApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-jta" />
       <extension name="coverage">
@@ -93,22 +93,6 @@
       <option name="PACKAGE_NAME" value="com.bsmx.spring.jta" />
       <option name="MAIN_CLASS_NAME" value="com.bsmx.spring.jta.ApplicationTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApplicationTests.saveMessagesInJmsAndDBWithApplicationErrorsAtEndOfTheFlow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-jta" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bsmx.spring.jta.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bsmx.spring.jta" />
-      <option name="MAIN_CLASS_NAME" value="com.bsmx.spring.jta.ApplicationTests" />
-      <option name="METHOD_NAME" value="saveMessagesInJmsAndDBWithApplicationErrorsAtEndOfTheFlow" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,6 +129,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ApplicationTests.saveMessagesInJmsAndDBWithSqlException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jta" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bsmx.spring.jta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bsmx.spring.jta" />
+      <option name="MAIN_CLASS_NAME" value="com.bsmx.spring.jta.ApplicationTests" />
+      <option name="METHOD_NAME" value="saveMessagesInJmsAndDBWithSqlException2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApplicationTests.saveMessagesInJmsAndDBWithoutErrors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-jta" />
       <extension name="coverage">
@@ -161,13 +161,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-jta" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bsmx.spring.jta.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithoutErrors" />
         <item itemvalue="JUnit.ApplicationTests" />
-        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithJmsException" />
         <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithSqlException" />
-        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithApplicationErrorsAtEndOfTheFlow" />
+        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithSqlException2" />
+        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithoutErrors" />
+        <item itemvalue="JUnit.ApplicationTests.saveMessagesInJmsAndDBWithJmsException" />
       </list>
     </recent_temporary>
   </component>
@@ -206,6 +213,17 @@
     <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
     <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit without JTA" />
@@ -233,6 +251,11 @@
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.7.8/spring-boot-2.7.8-sources.jar!/org/springframework/boot/jta/atomikos/AtomikosXADataSourceWrapper.java</url>
           <line>33</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bsmx/spring/jta/service/JmsService.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

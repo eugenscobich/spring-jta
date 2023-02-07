@@ -1,9 +1,16 @@
 package com.bsmx.spring.jta;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.bsmx.spring.jta.service.JtaService;
 import com.bsmx.spring.jta.service.ReceivedJtaMessagesService;
-import com.github.dockerjava.api.model.Config;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,20 +19,12 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
-import static net.bytebuddy.matcher.ElementMatchers.isEquals;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ContextConfiguration(initializers = TestApplicationContextInitializer.class)
 @RequiredArgsConstructor
 @ActiveProfiles("test")
+@Slf4j
 class ApplicationTests {
 
 	@LocalServerPort
@@ -57,11 +56,11 @@ class ApplicationTests {
 
 		assertTrue(response.getBody().contains(uuid.toString()));
 
+		String getReceivedMessagesUrl = baseUrl + "/getReceivedMessages";
 		boolean found = false;
 		for (int i = 0; i < 10; i++) {
-			String messagesInJms = receivedJtaMessagesService.getMessages();
-			String messagesInDB = jtaService.getMessages();
-			found = messagesInJms.contains(uuid.toString()) && messagesInDB.contains(uuid.toString());
+			ResponseEntity<String> jmsMessagesResponse = restTemplate.getForEntity(getReceivedMessagesUrl, String.class);
+			found = jmsMessagesResponse.getBody().contains(uuid.toString());
 			if (found) {
 				break;
 			}
@@ -87,23 +86,23 @@ class ApplicationTests {
 
 		assertFalse(response.getBody() != null && response.getBody().contains(uuid.toString()));
 
-		boolean foundMessagesInJms = false;
-		boolean foundMessagesInDB = false;
+
+		String getReceivedMessagesUrl = baseUrl + "/getReceivedMessages";
+		boolean found = false;
 		for (int i = 0; i < 10; i++) {
-			String messagesInJms = receivedJtaMessagesService.getMessages();
-			String messagesInDB = jtaService.getMessages();
-			foundMessagesInJms = messagesInJms.contains(uuid.toString());
-			foundMessagesInDB = messagesInDB.contains(uuid.toString());
-			if (foundMessagesInJms && foundMessagesInDB) {
+			ResponseEntity<String> jmsMessagesResponse = restTemplate.getForEntity(getReceivedMessagesUrl, String.class);
+			found = jmsMessagesResponse.getBody().contains(uuid.toString());
+			if (found) {
 				break;
 			}
 		}
-		assertFalse(foundMessagesInDB, "Found message in DB");
-		assertFalse(foundMessagesInJms, "Found message in JMS");
+		assertFalse(found, "Found message in JMS");
+
 	}
 
 	@Test
 	void saveMessagesInJmsAndDBWithSqlException() {
+		log.info("==============================================");
 		Map<String, Object> map = new HashMap<>();
 		UUID uuid = UUID.randomUUID();
 		String uuidStr = uuid + "1";
@@ -121,19 +120,47 @@ class ApplicationTests {
 
 		assertFalse(response.getBody() != null && response.getBody().contains(uuidStr));
 
-		boolean foundMessagesInJms = false;
-		boolean foundMessagesInDB = false;
+		String getReceivedMessagesUrl = baseUrl + "/getReceivedMessages";
+		boolean found = false;
 		for (int i = 0; i < 10; i++) {
-			String messagesInJms = receivedJtaMessagesService.getMessages();
-			String messagesInDB = jtaService.getMessages();
-			foundMessagesInJms = messagesInJms.contains(uuidStr);
-			foundMessagesInDB = messagesInDB.contains(uuidStr);
-			if (foundMessagesInJms && foundMessagesInDB) {
+			ResponseEntity<String> jmsMessagesResponse = restTemplate.getForEntity(getReceivedMessagesUrl, String.class);
+			found = jmsMessagesResponse.getBody() != null && jmsMessagesResponse.getBody().contains(uuid.toString());
+			if (found) {
 				break;
 			}
 		}
-		assertFalse(foundMessagesInDB, "Found message in DB");
-		assertFalse(foundMessagesInJms, "Found message in JMS");
+		assertFalse(found, "Found message in JMS");
+	}
+
+	@Test
+	void saveMessagesInJmsAndDBWithSqlExceptionAndLocalTransaction() {
+		Map<String, Object> map = new HashMap<>();
+		UUID uuid = UUID.randomUUID();
+		String uuidStr = uuid + "1";
+		map.put("message", uuidStr);
+
+		String baseUrl = "http://localhost:" + localPort;
+		String sendJmsMessageUrl = baseUrl + "/sendJmsMessageInLocalTransaction";
+
+		String result = restTemplate.postForObject(sendJmsMessageUrl, map, String.class);
+		assertTrue(result.contains("Internal Server Error"));
+
+		String getMessagesUrl = baseUrl + "/getMessages";
+		ResponseEntity<String> response = restTemplate.getForEntity(getMessagesUrl, String.class);
+
+
+		assertFalse(response.getBody() != null && response.getBody().contains(uuidStr));
+
+		String getReceivedMessagesUrl = baseUrl + "/getReceivedMessages";
+		boolean found = false;
+		for (int i = 0; i < 10; i++) {
+			ResponseEntity<String> jmsMessagesResponse = restTemplate.getForEntity(getReceivedMessagesUrl, String.class);
+			found = jmsMessagesResponse.getBody() != null && jmsMessagesResponse.getBody().contains(uuid.toString());
+			if (found) {
+				break;
+			}
+		}
+		assertFalse(found, "Found message in JMS");
 	}
 
 	@Test
@@ -159,19 +186,16 @@ class ApplicationTests {
 
 		assertFalse(response.getBody() != null && response.getBody().contains(uuidStr));
 
-		boolean foundMessagesInJms = false;
-		boolean foundMessagesInDB = false;
+		String getReceivedMessagesUrl = baseUrl + "/getReceivedMessages";
+		boolean found = false;
 		for (int i = 0; i < 10; i++) {
-			String messagesInJms = receivedJtaMessagesService.getMessages();
-			String messagesInDB = jtaService.getMessages();
-			foundMessagesInJms = messagesInJms.contains(uuidStr);
-			foundMessagesInDB = messagesInDB.contains(uuidStr);
-			if (foundMessagesInJms && foundMessagesInDB) {
+			ResponseEntity<String> jmsMessagesResponse = restTemplate.getForEntity(getReceivedMessagesUrl, String.class);
+			found = jmsMessagesResponse.getBody() != null && jmsMessagesResponse.getBody().contains(uuid.toString());
+			if (found) {
 				break;
 			}
 		}
-		assertFalse(foundMessagesInDB, "Found message in DB");
-		assertFalse(foundMessagesInJms, "Found message in JMS");
+		assertFalse(found, "Found message in JMS");
 	}
 
 }

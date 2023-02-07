@@ -11,14 +11,21 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class JmsService {
 
-    private final JmsTemplate jmsTemplate;
+    private final JmsTemplate xaJmsTemplate;
+
+    private final JmsTemplate simpleJmsTemplate;
 
     @Value("${service.jta.jms.destination}")
     private String detination;
 
     public void sendJmsMessage(String message) {
         log.info("Send message to Jms: " + message);
-        jmsTemplate.convertAndSend(detination, message);
+        xaJmsTemplate.convertAndSend(detination, message);
+    }
+
+    public void simpleSendJmsMessage(String message) {
+        log.info("Send message to Jms: " + message);
+        simpleJmsTemplate.convertAndSend(detination, message);
     }
 
 }
